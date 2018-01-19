@@ -1,0 +1,21 @@
+import cv2
+import numpy as np
+img = cv2.imread("graf3.png")
+kernel = np.ones((5,5),np.uint8)
+dst1 = cv2.morphologyEx(img,cv2.MORPH_ERODE,kernel)
+dst2 = cv2.morphologyEx(img,cv2.MORPH_DILATE,kernel)
+dst3 = cv2.morphologyEx(img,cv2.MORPH_CLOSE,kernel)
+dst4 = cv2.morphologyEx(img,cv2.MORPH_OPEN,kernel)
+dst5 = cv2.morphologyEx(img,cv2.MORPH_TOPHAT,kernel)
+dst6 = cv2.morphologyEx(img,cv2.MORPH_BLACKHAT,kernel)
+dst7 = cv2.morphologyEx(img,cv2.MORPH_GRADIENT,kernel)
+# cv2.imshow("th1",dst1)
+# cv2.imshow("th2",dst2)
+# cv2.imshow("th3",dst3)
+# cv2.imshow("th4",dst4)
+# cv2.imshow("th5",dst5)
+# cv2.imshow("th6",dst6)
+cv2.imshow("th7",dst7)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
